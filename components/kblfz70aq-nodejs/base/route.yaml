@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: kblfz70aq-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: kblfz70aq-nodejs 
+  name: kblfz70aq-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: kblfz70aq-nodejs
+    weight: 100 
